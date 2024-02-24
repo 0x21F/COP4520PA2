@@ -57,9 +57,9 @@ void run_plebs(int i) {
 
 int main() {
 	// thread here is arbitrary. Shouldn't have any effect on the code
-	//
-	first = 3;
-	std::cout << "running 8 threads\n"; 
+	std::srand(std::time(0));
+	first = std::rand() % n;
+	std::cout << "running " << n << " threads\n"; 
 	std::cout << "first thread is " << first << "\n";
 
 	// give threads jobs
