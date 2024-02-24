@@ -16,5 +16,5 @@ both:
 
 clean: 
 	@echo "Cleaning up..."
-	@rm cupcake pottery
+	@rm cupcake pottery -f
 	@echo "Cleaned up!"

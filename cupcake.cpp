@@ -95,7 +95,7 @@ int main() {
 	std::cout << "Minotaur got news that all guests have gone through the maze\n";
 	for(int i = 0; i < n; i++) 
 		if(!visited[i])
-			std::cout << "First person didn't count right and the minotaur removed their cupcakes...\n";
+			std::cout << "First person didn't count right and the minotaur removed the cupcakes from them...\n";
 
 	for(int i=0; i < n; i++) {
 		partygoers[i].join();
