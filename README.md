@@ -14,9 +14,14 @@ The only time a cupcake should be there is if someone hasn't entered before, if 
 
 ## problem 2 
 Test and Test and set with some extra stuff added so people don't go in multiple times. 
-It would be the 2nd approach with an added backoff period so the people can experience the party a little bit. It's also fair too so no partygoer can complain.
+It would be the 2nd approach with an added backoff period so the people
+can experience the party a little bit. It's also fair too so no partygoer can complain.
 
-This is arguably more ideal than the 3rd queue system since I'm restricting the max N threads to like 16. Anderson queues would likely be slower at such numbers (if we follow the slides).
+This is arguably more ideal than the 3rd queue system since I'm restricting the max N threads to like 16.
+Anderson queues would likely be slower at such numbers (if we follow the slides).
+
+If we were using an absurd number of threads compared to our number of cores
+(which I wouldn't recommend due to context switching and such) I'd probably use something more efficient in the queue system.
 
 # Running this stuff
 If you want to run this, just gotta use the makefile. There's options for ``both``, ``cupcake``, ``pottery``, and ``clean``. 
