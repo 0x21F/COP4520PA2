@@ -17,3 +17,6 @@ Test and Test and set with some extra stuff added so people don't go in multiple
 It would be the 2nd approach with an added backoff period so the people can experience the party a little bit. It's also fair too so no partygoer can complain.
 
 This is arguably more ideal than the 3rd queue system since I'm restricting the max N threads to like 16. Anderson queues would likely be slower at such numbers (if we follow the slides).
+
+# Running this stuff
+I'll probably make a MakeFile in the morning but for now cope.
