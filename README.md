@@ -19,4 +19,9 @@ It would be the 2nd approach with an added backoff period so the people can expe
 This is arguably more ideal than the 3rd queue system since I'm restricting the max N threads to like 16. Anderson queues would likely be slower at such numbers (if we follow the slides).
 
 # Running this stuff
-I'll probably make a MakeFile in the morning but for now cope.
+If you want to run this, just gotta use the makefile. There's options for ``both``, ``cupcake``, ``pottery``, and ``clean``. 
+``both`` compiles both and outputs them to their respective executables.  
+``cupcake`` and ``pottery`` compile their respective parts.
+``clean`` well, cleans...
+
+Follow that and it should run fine.
