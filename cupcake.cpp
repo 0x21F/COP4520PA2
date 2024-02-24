@@ -5,6 +5,7 @@
 #include <unistd.h>
 
 const int n = 8; 
+const int wait = 6942;
 std::atomic<bool> cupcake(true);
 std::atomic<int> flags[n];
 std::thread partygoers[n];
@@ -31,6 +32,7 @@ void run_first() {
 			// otherwise return back home
 			flags[first].store(0);
 		}
+		usleep(wait);
 	}
 }
 
@@ -50,7 +52,7 @@ void run_plebs(int i) {
 
 		// otherwise return back home
 		flags[i].store(0);
-		usleep(50);
+		usleep(wait);
 	}
 }
 
@@ -88,7 +90,7 @@ int main() {
 		visited[visitor] = true;
 		// wait til they finish the maze
 		while(flags[visitor].load() == 1) {
-			usleep(50);
+			usleep(wait);
 		}
 	}
 
