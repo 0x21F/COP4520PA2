@@ -61,10 +61,13 @@ int main() {
 	first = std::rand() % n;
 	std::cout << "running " << n << " threads\n"; 
 	std::cout << "first thread is " << first << "\n";
+	bool visited[n];
 
 	// give threads jobs
 	for(int i=0; i < n; i++) {
 		flags[i] = 0;
+		visited[i] = false;
+
 		if(i != first) {
 			partygoers[i] = std::thread(run_plebs, i);
 		}
@@ -75,12 +78,14 @@ int main() {
 	// sending first person
 	std::cout << "Sending partygoer " << first << " through the maze\n";
 	flags[first].store(1);
+	visited[first] = true;
 	
 	// here we act as the minotaur
 	while(flags[first].load() != 2) {
 		int visitor = std::rand() % n;
 		std::cout << "Sending partygoer " << visitor << " through the maze\n";
 		flags[visitor].store(1);
+		visited[visitor] = true;
 		// wait til they finish the maze
 		while(flags[visitor].load() == 1) {
 			usleep(50);
@@ -88,6 +93,9 @@ int main() {
 	}
 
 	std::cout << "Minotaur got news that all guests have gone through the maze\n";
+	for(int i = 0; i < n; i++) 
+		if(!visited[i])
+			std::cout << "First person didn't count right and the minotaur removed their cupcakes...\n";
 
 	for(int i=0; i < n; i++) {
 		partygoers[i].join();
