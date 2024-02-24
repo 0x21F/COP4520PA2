@@ -12,7 +12,7 @@ otherwise they leave the stand as it was when they entered.
 The only time a cupcake should be there is if someone hasn't entered before, if the entrants have entered they leave it as is so the first can count. 
 
 
-## problem 2 
+## Problem 2 
 Test and Test and set with some extra stuff added so people don't go in multiple times. 
 It would be the 2nd approach with an added backoff period so the people
 can experience the party a little bit. It's also fair too so no partygoer can complain.
