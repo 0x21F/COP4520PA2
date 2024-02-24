@@ -9,8 +9,9 @@ std::atomic<bool> flags[n];
 std::thread partygoers[n];
 
 void visit_vase(int i) {
+	int wait = 50;
 	do {
-		while(vase) continue;
+		while(vase) usleep(wait = wait * 2);
 	} while(vase.exchange(true) && !flags[i].load());
 	// lock acquired
 	std::cout << "Partygoer " << i << " has visited the vase!\n";
